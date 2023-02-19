@@ -9,7 +9,7 @@ type NavLinkType = {
 
 const NAVLINKS: NavLinkType[] = [
   { route: "/gamers", text: "Gamers" },
-  { route: "/guilds", text: "Guilds" },
+  { route: "/hire", text: "Hire" },
   { route: "/jobs", text: "Jobs" },
 ];
 
