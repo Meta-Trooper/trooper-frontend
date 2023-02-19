@@ -59,12 +59,28 @@ const Gamer: NextPage<{ gamers: Gamer[] }> = ({ gamers }) => {
               <h2 className="mt-2 text-lg text-gray-300">
                 {gamer.description}
               </h2>
-              <div className="flex items-center mt-3 ">
-                <h3 className="flex items-center text-highlight text-2xl">
-                  #{gamer.name_discord || "gamer543"}
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl text-gray-300">
+                  #{gamer.name_discord || `gamer${gamer.id.slice(2, 6)}`}
                 </h3>
-                <h3 className="ml-4 text-xl text-highlight border border-highlight rounded p-2 px-3">
+                <h3 className="text-xl text-gray-300">
+                  📍{gamer.location || `remote`}
+                </h3>
+                <h3 className=" text-xl text-highlight border border-highlight rounded p-2 px-3">
                   {gamer.profile_type || 0}
+                </h3>
+              </div>
+              <div className=""></div>
+              <div className="flex items-center justify-around mt-6">
+                <h3 className="flex items-center text-highlight text-2xl">
+                  {gamer.min_hour_rate || 0} ₸ /hour
+                </h3>
+                <h3 className=" text-2xl text-gray-300">
+                  {gamer.hours_per_day || 0} hrs/week
+                </h3>
+                <h3 className="text-2xl text-gray-300">
+                  {" "}
+                  {gamer.total_earned || 0}₸ earned
                 </h3>
               </div>
               <button className="rounded bg-highlight flex w-full mt-6 text-xl  p-2 justify-center">
@@ -77,6 +93,15 @@ const Gamer: NextPage<{ gamers: Gamer[] }> = ({ gamers }) => {
     </>
   );
 };
+
+// username: string;
+// date_created: string;
+// profile_type: string;
+// birthdate: string;
+// description: string;
+// location: string;
+// favorite_games: string;
+// favorite_roles: string;
 
 export async function getServerSideProps() {
   const gamers = await getGamer();
