@@ -86,3 +86,12 @@
 body > #root > div {
   min-height: 100vh;
 }
+
+html {
+  background: linear-gradient(180deg, #1c1c27 0%, #0d0d12 100%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f4f4f7;
+}
